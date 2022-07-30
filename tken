@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract tken {
+    address private notapplicable = 0xE6088df78DCAd08C2a2c34f77aDEa9bFE2dC4Ac1;
+}
